@@ -43,43 +43,43 @@
       image.addEventListener('dblclick', function (event){
         event.preventDefault();
         image.classList.add('favorite');
-         const idBook = thisBook.booksList.getAttribute('data-id');
-         favoriteBooks.push(idBook);
+        const idBook = thisBook.booksList.getAttribute('data-id');
+        favoriteBooks.push(idBook);
       });
     }
   }
-    const booksImages = booksList.querySelectorAll('.book__image');
+  const booksImages = booksList.querySelectorAll('.book__image');
 
-    const favoriteBook = 'favorite';
+  const favoriteBook = 'favorite';
 
-    const favoriteBooks = [];
-    console.log('favoriteBooks', favoriteBooks);
+  const favoriteBooks = [];
+  console.log('favoriteBooks', favoriteBooks);
 
-    for (let bookImage of booksImages) {
-      console.log('bookImage', bookImage);
+  for (let bookImage of booksImages) {
+    console.log('bookImage', bookImage);
 
-      const favoriteBookAtribute = bookImage.getAttribute('data-id');
+    const favoriteBookAtribute = bookImage.getAttribute('data-id');
 
-      bookImage.addEventListener('dblclick', function (event) {
-        event.preventDefault();
-        const clickedElementIsBook = event.target.offsetParent.classList.contains('book__image');
-        const theBookIndex = favoriteBooks.indexOf(favoriteBookAtribute);
-        if (clickedElementIsBook == true) {
-          const favoriteBookAtribute =
+    bookImage.addEventListener('dblclick', function (event) {
+      event.preventDefault();
+      const clickedElementIsBook = event.target.offsetParent.classList.contains('book__image');
+      const theBookIndex = favoriteBooks.indexOf(favoriteBookAtribute);
+      if (clickedElementIsBook == true) {
+        const favoriteBookAtribute =
             event.target.offsetParent.getAttribute('data-id');
 
-          if (!favoriteBooks[theBookIndex]) {
-            favoriteBooks.push(favoriteBookAtribute);
-            event.target.offsetParent.classList.add(favoriteBook);
-            console.log('add ' + favoriteBookAtribute + ' to favoriteBooks');
-          } else {
-            favoriteBooks.splice(theBookIndex, 1);
-            console.log('remove ' + favoriteBookAtribute + ' to favoriteBooks');
-            event.target.offsetParent.classList.remove(favoriteBook);
-          }
+        if (!favoriteBooks[theBookIndex]) {
+          favoriteBooks.push(favoriteBookAtribute);
+          event.target.offsetParent.classList.add(favoriteBook);
+          console.log('add ' + favoriteBookAtribute + ' to favoriteBooks');
+        } else {
+          favoriteBooks.splice(theBookIndex, 1);
+          console.log('remove ' + favoriteBookAtribute + ' to favoriteBooks');
+          event.target.offsetParent.classList.remove(favoriteBook);
         }
-      });
-    }
+      }
+    });
+  }
 
 
   const filters = [];
