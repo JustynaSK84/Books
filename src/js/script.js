@@ -1,3 +1,4 @@
+/* global Handlebars, utils, dataSource */
 'use strict';
 
 {
@@ -20,7 +21,7 @@
 
   function render() {
 
-    const thisBook = this;
+    // const thisBook = this;
 
     for (let eachBook of dataSource.books) {
       // Generate HTML based on template
@@ -36,7 +37,7 @@
   }
 
   function initActions(){
-    // const thisBook = this;
+    const thisBook = this;
     const favoriteBooks = [];
     const bookImages = document.querySelectorAll(select.containerOf.images);
     for (let image of bookImages){
